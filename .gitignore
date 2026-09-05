@@ -1,0 +1,7 @@
+# Keep local and potentially sensitive documents out of commits by default.
+documents/*.pdf
+
+# Common local/editor output.
+.DS_Store
+Thumbs.db
+.vscode/
