@@ -357,13 +357,6 @@ h2 {
 	font-size: 0.84rem;
 }
 
-.pdf-status {
-	margin-top: 12px;
-	color: #a33a2b;
-	font-size: 0.78rem;
-	font-weight: 700;
-}
-
 .pdf-icon {
 	display: grid;
 	width: 58px;

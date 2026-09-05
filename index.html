@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Ryne Shelton's professional webspace.">
-    <meta name="referrer" content="no-referrer">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; frame-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self';">
     <title>Ryne Shelton | Webspace</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -89,9 +87,8 @@
                                 <span class="pdf-icon" aria-hidden="true">PDF</span>
                                 <p>No resume PDF selected</p>
                                 <span>Choose a file to view it here.</span>
-                                <span class="pdf-status" role="alert" hidden></span>
                             </div>
-                            <iframe title="Resume PDF viewer" loading="lazy" referrerpolicy="no-referrer" hidden></iframe>
+                            <iframe title="Resume PDF viewer" hidden></iframe>
                         </div>
                         <div class="document-actions">
                             <label class="button button-small" for="resume-file">Choose resume PDF</label>
@@ -110,9 +107,8 @@
                                 <span class="pdf-icon" aria-hidden="true">PDF</span>
                                 <p>No business plan PDF selected</p>
                                 <span>Choose a file to view it here.</span>
-                                <span class="pdf-status" role="alert" hidden></span>
                             </div>
-                            <iframe title="Business plan PDF viewer" loading="lazy" referrerpolicy="no-referrer" hidden></iframe>
+                            <iframe title="Business plan PDF viewer" hidden></iframe>
                         </div>
                         <div class="document-actions">
                             <label class="button button-small" for="business-plan-file">Choose business plan PDF</label>
@@ -137,6 +133,26 @@
         <span>© 2026 Ryne Shelton</span>
         <span>Built with intent.</span>
     </footer>
-    <script src="js/pdf-viewer.js" defer></script>
+    <script>
+        document.querySelectorAll("[data-pdf-input]").forEach((input) => {
+            input.addEventListener("change", () => {
+                const file = input.files[0];
+                if (!file || file.type !== "application/pdf") return;
+
+                const key = input.dataset.pdfInput;
+                const card = input.closest(".document-card");
+                const frame = card.querySelector("iframe");
+                const emptyState = card.querySelector(".pdf-empty-state");
+                const link = card.querySelector(`[data-pdf-link="${key}"]`);
+                const fileUrl = URL.createObjectURL(file);
+
+                frame.src = fileUrl;
+                frame.hidden = false;
+                emptyState.hidden = true;
+                link.href = fileUrl;
+                link.hidden = false;
+            });
+        });
+    </script>
 </body>
 </html>
