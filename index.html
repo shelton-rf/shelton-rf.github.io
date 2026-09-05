@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Ryne Shelton's professional webspace.">
+    <meta name="referrer" content="no-referrer">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; frame-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self';">
     <title>Ryne Shelton | Webspace</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -17,6 +19,7 @@
             <nav aria-label="Primary navigation">
                 <a href="#about">About</a>
                 <a href="#work">Work</a>
+                <a href="#documents">Documents</a>
                 <a href="#contact">Contact</a>
             </nav>
         </div>
@@ -70,9 +73,60 @@
             </div>
         </section>
 
+        <section class="section documents-section" id="documents" aria-labelledby="documents-title">
+            <div class="section-label">03 / DOCUMENTS</div>
+            <div class="section-body">
+                <h2 id="documents-title">Resume &amp; business plan</h2>
+                <p class="documents-intro">View the latest professional documents directly in the page. Select a PDF below to load it into its viewer.</p>
+                <div class="document-grid">
+                    <article class="document-card">
+                        <div class="document-heading">
+                            <span class="document-type">PDF / 01</span>
+                            <h3>Resume</h3>
+                        </div>
+                        <div class="pdf-stage" data-pdf-viewer>
+                            <div class="pdf-empty-state">
+                                <span class="pdf-icon" aria-hidden="true">PDF</span>
+                                <p>No resume PDF selected</p>
+                                <span>Choose a file to view it here.</span>
+                                <span class="pdf-status" role="alert" hidden></span>
+                            </div>
+                            <iframe title="Resume PDF viewer" loading="lazy" referrerpolicy="no-referrer" hidden></iframe>
+                        </div>
+                        <div class="document-actions">
+                            <label class="button button-small" for="resume-file">Choose resume PDF</label>
+                            <input id="resume-file" class="visually-hidden" type="file" accept="application/pdf" data-pdf-input="resume">
+                            <a class="document-link" href="#" target="_blank" rel="noopener" hidden data-pdf-link="resume">Open PDF ↗</a>
+                        </div>
+                    </article>
+
+                    <article class="document-card">
+                        <div class="document-heading">
+                            <span class="document-type">PDF / 02</span>
+                            <h3>Business plan</h3>
+                        </div>
+                        <div class="pdf-stage" data-pdf-viewer>
+                            <div class="pdf-empty-state">
+                                <span class="pdf-icon" aria-hidden="true">PDF</span>
+                                <p>No business plan PDF selected</p>
+                                <span>Choose a file to view it here.</span>
+                                <span class="pdf-status" role="alert" hidden></span>
+                            </div>
+                            <iframe title="Business plan PDF viewer" loading="lazy" referrerpolicy="no-referrer" hidden></iframe>
+                        </div>
+                        <div class="document-actions">
+                            <label class="button button-small" for="business-plan-file">Choose business plan PDF</label>
+                            <input id="business-plan-file" class="visually-hidden" type="file" accept="application/pdf" data-pdf-input="business-plan">
+                            <a class="document-link" href="#" target="_blank" rel="noopener" hidden data-pdf-link="business-plan">Open PDF ↗</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
         <section class="contact-band" id="contact" aria-labelledby="contact-title">
             <div>
-                <p class="eyebrow">03 / GET IN TOUCH</p>
+                <p class="eyebrow">04 / GET IN TOUCH</p>
                 <h2 id="contact-title">Let’s build something useful.</h2>
             </div>
             <a class="button button-light" href="mailto:hello@shelton-rf.github.io">Start a conversation <span aria-hidden="true">→</span></a>
@@ -83,5 +137,6 @@
         <span>© 2026 Ryne Shelton</span>
         <span>Built with intent.</span>
     </footer>
+    <script src="js/pdf-viewer.js" defer></script>
 </body>
 </html>

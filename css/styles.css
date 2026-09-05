@@ -284,6 +284,138 @@ h2 {
 	font-size: 0.94rem;
 }
 
+.documents-intro {
+	margin-bottom: 36px;
+}
+
+.document-grid {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 24px;
+}
+
+.document-card {
+	padding: 22px;
+	background: var(--white);
+	border: 1px solid var(--line);
+}
+
+.document-heading {
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+	gap: 16px;
+	margin-bottom: 18px;
+}
+
+.document-heading h3 {
+	margin: 0;
+	color: var(--blue-dark);
+	font-size: 1.65rem;
+}
+
+.document-type {
+	color: var(--blue);
+	font-size: 0.68rem;
+	font-weight: 800;
+	letter-spacing: 0.12em;
+}
+
+.pdf-stage {
+	position: relative;
+	min-height: 360px;
+	background: #e9f0f4;
+	border: 1px solid var(--line);
+}
+
+.pdf-stage iframe {
+	display: block;
+	width: 100%;
+	height: 360px;
+	border: 0;
+	background: var(--white);
+}
+
+.pdf-empty-state {
+	display: grid;
+	min-height: 360px;
+	place-content: center;
+	justify-items: center;
+	padding: 24px;
+	color: var(--muted);
+	text-align: center;
+}
+
+.pdf-empty-state p {
+	margin: 16px 0 4px;
+	color: var(--blue-dark);
+	font-family: Georgia, "Times New Roman", serif;
+	font-size: 1.2rem;
+}
+
+.pdf-empty-state span:last-child {
+	font-size: 0.84rem;
+}
+
+.pdf-status {
+	margin-top: 12px;
+	color: #a33a2b;
+	font-size: 0.78rem;
+	font-weight: 700;
+}
+
+.pdf-icon {
+	display: grid;
+	width: 58px;
+	height: 68px;
+	place-items: center;
+	color: var(--blue-dark);
+	background: var(--yellow);
+	font-size: 0.68rem;
+	font-weight: 900;
+	letter-spacing: 0.08em;
+	border: 2px solid var(--blue-dark);
+}
+
+.document-actions {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 16px;
+	padding-top: 18px;
+}
+
+.button-small {
+	padding: 11px 14px;
+	cursor: pointer;
+	font-size: 0.72rem;
+}
+
+.document-link {
+	color: var(--blue);
+	font-size: 0.8rem;
+	font-weight: 800;
+	text-decoration: none;
+}
+
+.document-link:hover,
+.document-link:focus-visible {
+	color: var(--blue-dark);
+	text-decoration: underline;
+}
+
+.visually-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
+}
+
 .contact-band {
 	display: flex;
 	align-items: center;
@@ -368,6 +500,15 @@ h2 {
 
 	.work-grid {
 		grid-template-columns: 1fr;
+	}
+
+	.document-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.document-actions {
+		align-items: flex-start;
+		flex-direction: column;
 	}
 
 	.contact-band {
