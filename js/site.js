@@ -4,7 +4,7 @@ const PDF_SIGNATURE = "%PDF-";
 const objectUrls = new WeakMap();
 
 function isPdf(file) {
-	return file && file.size >= PDF_SIGNATURE.length && file.type === "application/pdf";
+	return file && file.size >= PDF_SIGNATURE.length;
 }
 
 async function hasPdfSignature(file) {
