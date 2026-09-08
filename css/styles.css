@@ -217,10 +217,9 @@ h1 span {
 	display: block;
 	width: 100%;
 	max-width: 220px;
-	aspect-ratio: 1;
+	height: auto;
 	margin: 0 auto 20px;
 	border-radius: 0;
-	object-fit: cover;
 	background: #eaf3f8;
 	border: 1px solid var(--line);
 }
