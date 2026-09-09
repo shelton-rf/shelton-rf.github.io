@@ -222,6 +222,7 @@ h1 span {
 	border-radius: 0;
 	background: #eaf3f8;
 	border: 1px solid var(--line);
+	object-fit: contain;
 }
 
 .profile-card p {
