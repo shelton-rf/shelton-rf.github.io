@@ -14,6 +14,30 @@ async function hasPdfSignature(file) {
 	return header === PDF_SIGNATURE;
 }
 
+document.querySelectorAll("[data-auth-tab]").forEach((tab) => {
+	tab.addEventListener("click", () => {
+		const selectedAuth = tab.dataset.authTab;
+
+		document.querySelectorAll("[data-auth-tab]").forEach((item) => {
+			const isSelected = item === tab;
+			item.classList.toggle("is-active", isSelected);
+			item.setAttribute("aria-selected", String(isSelected));
+		});
+
+		document.querySelectorAll("[data-auth-form]").forEach((form) => {
+			form.hidden = form.dataset.authForm !== selectedAuth;
+		});
+	});
+});
+
+document.querySelectorAll("[data-auth-form]").forEach((form) => {
+	form.addEventListener("submit", (event) => {
+		event.preventDefault();
+		const status = document.querySelector("[data-auth-status]");
+		status.textContent = "This static preview does not transmit credentials. Connect /api/auth to an audited identity service before enabling access.";
+	});
+});
+
 document.querySelectorAll("[data-pdf-input]").forEach((input) => {
 	input.addEventListener("change", async () => {
 		const file = input.files[0];
