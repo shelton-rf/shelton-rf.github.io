@@ -322,7 +322,7 @@
             </div>
         </section>
 
-        <section class="section contact-section" id="contact" aria-labelledby="contact-title">
+        <section class="section" id="documents" aria-labelledby="documents-title">
                 <div class="section-label">08 / DOCUMENTS</div>
                 <div class="section-body">
                     <h2 id="documents-title">Resume &amp; business plan</h2>
@@ -370,27 +370,27 @@
 
             <section class="section contact-section" id="contact" aria-labelledby="contact-title">
                 <div class="section-label">09 / CONTACT</div>
-            <div class="section-body contact-layout">
-                <div class="contact-intro">
-                    <p class="eyebrow">GET IN TOUCH</p>
-                    <h2 id="contact-title">Good work starts with a conversation.</h2>
-                    <p>I’m glad to connect about engineering roles, technical projects, research, and collaboration.</p>
-                    <p><a href="mailto:rshelton93@proton.me">rshelton93@proton.me</a><br><a href="tel:+19715300700">+1 971 530 0700</a></p>
+                <div class="section-body contact-layout">
+                    <div class="contact-intro">
+                        <p class="eyebrow">GET IN TOUCH</p>
+                        <h2 id="contact-title">Good work starts with a conversation.</h2>
+                        <p>I’m glad to connect about engineering roles, technical projects, research, and collaboration.</p>
+                        <p><a href="mailto:rshelton93@proton.me">rshelton93@proton.me</a><br><a href="tel:+19715300700">+1 971 530 0700</a></p>
+                    </div>
+                    <form class="contact-form" data-contact-form>
+                        <label for="contact-name">Your name</label>
+                        <input id="contact-name" name="name" autocomplete="name" required>
+                        <label for="contact-email">Your email</label>
+                        <input id="contact-email" name="email" type="email" autocomplete="email" required>
+                        <label for="contact-subject">Subject</label>
+                        <input id="contact-subject" name="subject" required>
+                        <label for="contact-message">Message</label>
+                        <textarea id="contact-message" name="message" rows="5" required></textarea>
+                        <button class="button" type="submit">Prepare email <span aria-hidden="true">→</span></button>
+                        <p class="form-note" data-contact-status role="status" aria-live="polite">Your email app will open with your message ready to send.</p>
+                    </form>
                 </div>
-                <form class="contact-form" data-contact-form>
-                    <label for="contact-name">Your name</label>
-                    <input id="contact-name" name="name" autocomplete="name" required>
-                    <label for="contact-email">Your email</label>
-                    <input id="contact-email" name="email" type="email" autocomplete="email" required>
-                    <label for="contact-subject">Subject</label>
-                    <input id="contact-subject" name="subject" required>
-                    <label for="contact-message">Message</label>
-                    <textarea id="contact-message" name="message" rows="5" required></textarea>
-                    <button class="button" type="submit">Prepare email <span aria-hidden="true">→</span></button>
-                    <p class="form-note" data-contact-status role="status" aria-live="polite">Your email app will open with your message ready to send.</p>
-                </form>
-            </div>
-        </section>
+            </section>
     </main>
 
     <footer class="site-footer">
