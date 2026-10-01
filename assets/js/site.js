@@ -2,6 +2,22 @@
 
 const PDF_SIGNATURE = "%PDF-";
 const objectUrls = new WeakMap();
+const pdfUrls = {
+	resume: new URL("../../documents/resume_cp-3.pdf", import.meta.url).href,
+	"business-plan": new URL("../../documents/BusinessPlan-2.pdf", import.meta.url).href
+};
+
+document.querySelectorAll("[data-pdf-viewer]").forEach((frame) => {
+	const documentName = frame.dataset.pdfViewer;
+	const pdfUrl = pdfUrls[documentName];
+	if (!pdfUrl) return;
+
+	frame.src = pdfUrl;
+	frame.hidden = false;
+	document.querySelector(`[data-pdf-empty-state="${documentName}"]`).hidden = true;
+	document.querySelector(`[data-pdf-open="${documentName}"]`).href = pdfUrl;
+	document.querySelector(`[data-pdf-download="${documentName}"]`).href = pdfUrl;
+});
 
 function isPdf(file) {
 	return file && file.size >= PDF_SIGNATURE.length;

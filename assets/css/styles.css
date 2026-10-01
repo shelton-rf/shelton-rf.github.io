@@ -735,6 +735,10 @@ h2 {
 	text-align: center;
 }
 
+.pdf-empty-state[hidden] {
+	display: none;
+}
+
 .pdf-empty-state p {
 	margin: 16px 0 4px;
 	color: var(--blue-dark);

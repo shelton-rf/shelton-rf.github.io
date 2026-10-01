@@ -1,5 +1,7 @@
 # Keep local and potentially sensitive documents out of commits by default.
 documents/*.pdf
+!documents/BusinessPlan-2.pdf
+!documents/resume_cp-3.pdf
 
 # Common local/editor output.
 .DS_Store
